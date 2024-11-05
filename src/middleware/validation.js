@@ -1,3 +1,5 @@
+
+//todos los campos tienen que estar
 const validateStudentBody = (req, res, next) => {
     const { firstname, lastname, dni, email } = req.body;
 
