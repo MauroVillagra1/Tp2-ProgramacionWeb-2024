@@ -1,5 +1,6 @@
 const express = require('express');
 const { findAll, create } = require('../services/studentService.js');
+const { Op } = require('sequelize');  // Importa Op desde Sequelize
 
 const router = express.Router();
 

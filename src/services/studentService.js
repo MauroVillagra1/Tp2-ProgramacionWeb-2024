@@ -1,4 +1,5 @@
 const Students = require('../models/Student.js');
+const { Op } = require('sequelize');  // Agregar esta línea
 
 const findAll = async (search, currentPage = 1, pageSize = 5) => {
     try {

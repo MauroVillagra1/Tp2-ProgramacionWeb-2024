@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
+const { Op } = require('sequelize');  // Importa Op desde Sequelize
 
 class Students extends Model {
     static init = (sequelize) => {
