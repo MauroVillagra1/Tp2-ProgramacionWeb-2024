@@ -6,6 +6,7 @@ const { getSeqInstance } = require('./src/config/setupDB.js');
 const setupModels = require('./src/config/setupModel'); // Nueva línea para configurar modelos
 const studentsRoutes = require('./src/routes/studentRoutes.js');
 const errorHandler = require('./src/middleware/errorHandler'); // Middleware de manejo de errores
+const adminRoutes = require('./src/routes/adminRoutes.js')
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use('/api/students', studentsRoutes);
+app.use('/api/admins', adminRoutes);
 
 // Configuración de modelos y conexión a la base de datos
 setupModels().then(() => {
