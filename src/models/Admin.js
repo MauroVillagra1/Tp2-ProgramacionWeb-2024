@@ -28,6 +28,10 @@ class Administrator extends Model {
                     type: DataTypes.BOOLEAN,
                     defaultValue: true,
                 },
+                codeRecovery:{
+                    type: DataTypes.INTEGER,
+                    allowNull: true,
+                }
             },
             {
                 sequelize,
