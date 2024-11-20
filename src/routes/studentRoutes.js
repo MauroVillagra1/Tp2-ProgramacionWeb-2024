@@ -1,12 +1,12 @@
 const express = require('express');
 const { findAll, create } = require('../services/studentService.js');
-const { Op } = require('sequelize');  // Importa Op desde Sequelize
+const { Op } = require('sequelize'); 
 const Students = require('../models/Student.js');
 
 const router = express.Router();
 
 
-//traer la tabla
+
 router.get('/', async (req, res) => {
 
     const { search = '', currentPage = 1, pageSize = 5 } = req.query;
@@ -20,7 +20,6 @@ router.get('/', async (req, res) => {
 });
 
 
-//Creacion de nuevo estudiante
 router.post('/', async (req, res) => {
     try {
         const newStudent = await create(req.body);

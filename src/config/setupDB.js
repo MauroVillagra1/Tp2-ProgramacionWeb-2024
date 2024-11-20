@@ -3,12 +3,12 @@ let seqInstance = null;
 
 const createInstance = async () => {
     const instance = new Sequelize(
-        process.env.DB_NAME, // nombre de base de datos
-        process.env.DB_USER, // usuario
-        process.env.DB_PASSWORD, // contraseña
+        process.env.DB_NAME,
+        process.env.DB_USER, 
+        process.env.DB_PASSWORD, 
         {
             host: process.env.DB_HOST,
-            port: process.env.DB_PORT, // Agrega el puerto aquí
+            port: process.env.DB_PORT, 
             dialect: 'mysql',
             pool: {
                 max: 3

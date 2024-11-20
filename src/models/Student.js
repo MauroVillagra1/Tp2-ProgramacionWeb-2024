@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const { Op } = require('sequelize');  // Importa Op desde Sequelize
+const { Op } = require('sequelize'); 
 
 class Students extends Model {
     static init = (sequelize) => {
@@ -38,7 +38,7 @@ class Students extends Model {
             {
                 sequelize,
                 modelName: 'students',
-                timestamps: true, // Activar automáticamente createdAt y updatedAt
+                timestamps: true, 
             }
         );
 
@@ -50,7 +50,7 @@ class Students extends Model {
             order: [['sid', 'DESC']],
             where: { deleted: 0 },
         });
-        return lastStudent ? lastStudent.sid + 1 : 1; // Iniciar en 1 si no hay estudiantes
+        return lastStudent ? lastStudent.sid + 1 : 1; 
     }
 
     static async getAll(search, currentPage, pageSize) {

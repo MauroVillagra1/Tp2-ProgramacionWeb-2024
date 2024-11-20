@@ -3,9 +3,9 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const { getSeqInstance } = require('./src/config/setupDB.js'); 
-const setupModels = require('./src/config/setupModel'); // Nueva línea para configurar modelos
+const setupModels = require('./src/config/setupModel'); 
 const studentsRoutes = require('./src/routes/studentRoutes.js');
-const errorHandler = require('./src/middleware/errorHandler'); // Middleware de manejo de errores
+const errorHandler = require('./src/middleware/errorHandler'); 
 const adminRoutes = require('./src/routes/adminRoutes.js')
 
 const app = express();
@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use('/api/students', studentsRoutes);
 app.use('/api/admins', adminRoutes);
 
-// Configuración de modelos y conexión a la base de datos
+
 setupModels().then(() => {
     console.log('Models are set up successfully');
     return getSeqInstance();
@@ -28,7 +28,7 @@ setupModels().then(() => {
     console.error('Unable to connect to the database:', error);
 });
 
-// Usar el middleware de manejo de errores al final
+
 app.use(errorHandler);
 
 module.exports = app;
